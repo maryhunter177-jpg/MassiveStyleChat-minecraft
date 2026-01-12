@@ -15,39 +15,34 @@ public class MassiveChatPlugin extends JavaPlugin {
     public void onEnable() {
         instance = this;
         
-        // 1. Inicializar Configurações e carregar canais.yml
+        // 1. Inicializar Configurações
         saveDefaultConfig();
         this.configManager = new ConfigManager(this);
         
-        // 2. Registrar o ChatListener (Onde ocorre a mágica do Markdown/Canais)
+        // 2. Registrar o ChatListener
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
         
-        // 3. Registrar o comando principal e seus aliases
-        // Certifique-se de que no plugin.yml 'chat' tenha aliases: [g, l, rp]
+        // 3. Registrar o comando principal
         if (getCommand("chat") != null) {
             ChatCommand chatCommand = new ChatCommand();
             getCommand("chat").setExecutor(chatCommand);
-            getCommand("chat").setTabCompleter(chatCommand);
+            // Removido o setTabCompleter para evitar o erro de incompatibilidade
         }
         
         getLogger().info("========================================");
-        getLogger().info("MassiveStyleChat ativado com sucesso!");
-        getLogger().info("Canais carregados e prontos para uso.");
+        getLogger().info("DeorumChat ativado com sucesso!");
         getLogger().info("========================================");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("MassiveStyleChat desativado! Salvando dados...");
+        getLogger().info("DeorumChat desativado!");
     }
 
-    /**
-     * Método para recarregar o plugin sem precisar reiniciar o servidor.
-     */
     public void reloadPlugin() {
         reloadConfig();
         this.configManager = new ConfigManager(this);
-        getLogger().info("Configuracoes recarregadas com sucesso!");
+        getLogger().info("Configuracoes recarregadas!");
     }
 
     public static MassiveChatPlugin getInstance() {
