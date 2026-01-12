@@ -1,9 +1,9 @@
-name: MassiveStyleChat
+name: DeorumChat
 version: 1.0
 main: com.seuprojeto.massivechat.MassiveChatPlugin
 api-version: 1.20
-author: SeuNome
-description: Chat profissional estilo MassiveChat com Markdown e Canais.
+author: MaryHunter
+description: Chat profissional com Markdown e Canais.
 
 commands:
   chat:
@@ -12,9 +12,9 @@ commands:
     aliases: [g, l, rp]
 
 permissions:
-  massivechat.admin:
+  deorumchat.admin:
     description: Permite usar o /chat reload
     default: op
-  massivechat.color:
+  deorumchat.color:
     description: Permite usar cores no chat
     default: true

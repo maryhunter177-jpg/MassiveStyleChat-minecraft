@@ -1,9 +1,9 @@
 channels:
   global:
-    prefix: "&7[G]"
-    format: "%prefix% %player%: %message%"
+    prefix: "&b[Global] &r"
+    format: "%prefix%&7%player%&f: %message%"
     range: -1
   local:
-    prefix: "&e[L]"
-    format: "%prefix% %player% diz: %message%"
+    prefix: "&e[Local] &r"
+    format: "%prefix%&7%player%&f: %message%"
     range: 100

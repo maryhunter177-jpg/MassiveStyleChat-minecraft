@@ -19,4 +19,8 @@ Siga os passos abaixo para instalar o plugin no seu servidor:
 * `/l <mensagem>` - Envia mensagem no chat Local.
 
 ---
+<<<<<<< HEAD
 *Desenvolvido por Mary Hunter para Nathy Suki*
+=======
+*Desenvolvido com ❤️ para Nathy Suki*
+>>>>>>> d7163fb (Renomeado para DeorumChat e ajustes finais)
