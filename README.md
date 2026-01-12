@@ -19,4 +19,4 @@ Siga os passos abaixo para instalar o plugin no seu servidor:
 * `/l <mensagem>` - Envia mensagem no chat Local.
 
 ---
-*Desenvolvido com ❤️ para Nathy Suki*
+*Desenvolvido por Mary Hunter para Nathy Suki*
