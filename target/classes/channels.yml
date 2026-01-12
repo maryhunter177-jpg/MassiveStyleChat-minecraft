@@ -1,0 +1,9 @@
+channels:
+  global:
+    prefix: "&7[G]"
+    format: "%prefix% %player%: %message%"
+    range: -1
+  local:
+    prefix: "&e[L]"
+    format: "%prefix% %player% diz: %message%"
+    range: 100
