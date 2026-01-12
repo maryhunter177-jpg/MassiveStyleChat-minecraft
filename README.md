@@ -19,4 +19,4 @@ Siga os passos abaixo para instalar o plugin no seu servidor:
 * `/l <mensagem>` - Envia mensagem no chat Local.
 
 ---
-*Desenvolvido com ❤️ para [Nome da Cliente]*
+*Desenvolvido com ❤️ para Nathy Suki*
