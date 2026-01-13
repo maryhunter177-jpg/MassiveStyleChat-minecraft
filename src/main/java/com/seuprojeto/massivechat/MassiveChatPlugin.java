@@ -16,17 +16,17 @@ public class MassiveChatPlugin extends JavaPlugin {
         instance = this;
         
         // 1. Inicializar Configurações
-        saveDefaultConfig();
+        // Removido saveDefaultConfig() para evitar erro de recurso ausente
         this.configManager = new ConfigManager(this);
         
-        // 2. Registrar o ChatListener
+        // 2. Registrar o ChatListener (Onde ocorre a mágica do Markdown/Canais)
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
         
-        // 3. Registrar o comando principal
+        // 3. Registrar o comando principal e seus aliases
         if (getCommand("chat") != null) {
             ChatCommand chatCommand = new ChatCommand();
             getCommand("chat").setExecutor(chatCommand);
-            // Removido o setTabCompleter para evitar o erro de incompatibilidade
+            // TabCompleter desativado para garantir compatibilidade imediata
         }
         
         getLogger().info("========================================");
@@ -39,6 +39,9 @@ public class MassiveChatPlugin extends JavaPlugin {
         getLogger().info("DeorumChat desativado!");
     }
 
+    /**
+     * Método para recarregar o plugin sem precisar reiniciar o servidor.
+     */
     public void reloadPlugin() {
         reloadConfig();
         this.configManager = new ConfigManager(this);
