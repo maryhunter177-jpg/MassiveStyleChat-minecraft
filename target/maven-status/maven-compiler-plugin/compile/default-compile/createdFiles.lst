@@ -1,5 +1,8 @@
 com\seuprojeto\massivechat\chat\EmoteParser.class
 com\seuprojeto\massivechat\command\ChatCommand.class
+com\seuprojeto\massivechat\MassiveChatPlugin.class
 com\seuprojeto\massivechat\chat\FormatParser.class
 com\seuprojeto\massivechat\channel\ChannelManager.class
 com\seuprojeto\massivechat\player\PlayerData.class
+com\seuprojeto\massivechat\chat\ChatListener.class
+com\seuprojeto\massivechat\config\ConfigManager.class
