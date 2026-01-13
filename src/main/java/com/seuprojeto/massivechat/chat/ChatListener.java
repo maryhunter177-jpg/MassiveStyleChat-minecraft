@@ -2,7 +2,7 @@ package com.seuprojeto.massivechat.chat;
 
 import com.seuprojeto.massivechat.MassiveChatPlugin;
 import com.seuprojeto.massivechat.channel.ChannelManager;
-import com.seuprojeto.massivechat.player.PlayerData; // Importe corrigido aqui
+import com.seuprojeto.massivechat.player.PlayerData;
 import io.papermc.paper.event.player.AsyncChatEvent;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
@@ -10,7 +10,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
+import java.util.HashSet;
 import java.util.Set;
+import java.util.Collection;
 
 public class ChatListener implements Listener {
 
@@ -58,8 +60,12 @@ public class ChatListener implements Listener {
         
         Component component = LegacyComponentSerializer.legacySection().deserialize(finalEntry.replace("&", "§"));
 
-        // 5. Envia para os destinatários corretos
-        Set<Player> recipients = channelManager.getRecipients(player, (Set<Player>) plugin.getServer().getOnlinePlayers(), range);
+        // 5. Envia para os destinatários corretos (CORREÇÃO AQUI)
+        // Convertemos a lista de jogadores online para um HashSet para evitar o erro de ClassCastException
+        Collection<? extends Player> onlinePlayers = plugin.getServer().getOnlinePlayers();
+        Set<Player> onlineSet = new HashSet<>(onlinePlayers);
+        
+        Set<Player> recipients = channelManager.getRecipients(player, onlineSet, range);
         for (Player recipient : recipients) {
             recipient.sendMessage(component);
         }
